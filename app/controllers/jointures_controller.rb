@@ -1,0 +1,2 @@
+class JointuresController < ApplicationController
+end
