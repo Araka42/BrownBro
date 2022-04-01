@@ -1,1 +1,89 @@
 // Specific CSS for your home-page
+.container{
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) { .container {
+  max-width: 540px;
+}
+}
+
+@media (min-width: 768px) { .container {
+  max-width: 720px;
+}
+}
+
+
+@media (min-width: 992px) {.container {
+  max-width: 960px;
+}
+}
+
+@media (min-width: 1200px) { container {
+    max-width: 1170px;
+  }
+}
+
+.home-content{
+  padding-top:70px;
+  padding-bottom: 70px;
+  margin-left: -15px;
+  margin-right: -15px;
+  color:white;
+  padding-left: 15px;
+  padding-right: 15px;
+  .home-content-title{
+    margin:30px 0px;
+    font-weight: bold;
+    opacity: 1;
+    .home-content-title-p1{
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px;
+    }
+  }
+  .home-content-text{
+    .fa-comment-lines{
+      color:#dc493a;
+      font-size:45px;
+    }
+    .content{
+      -webkit-box-flex: 1;
+      flex: 1 0 0;
+      padding-left: 25px;
+      color:white;
+      opacity: 0.8;
+      line-height: 1.71429;
+        h5{
+          font-weight: 700;
+          margin: 0 0 10px;
+        }
+        .content-text{
+          font-size: 14px;
+          line-height: 1.71429;
+          font-weight: 300;
+          opacity: 0.8;
+          text-align: justify;
+        }
+      }
+    }
+
+}
+
+.customers{
+  margin: 0px -30px;
+  height: 210px;
+  .inner-customers{
+    padding: 0px 30px;
+    .carousel{
+      .carousel-item{
+        img{
+          width: 204px;
+        }
+      }
+    }
+  }
+}
