@@ -1,26 +1,65 @@
 <div class="banner-metier">
 </div>
-
-<div class="row">
-  <div class="column">
-    <div class="row">
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
+<div class="container py-5">
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active px-0 py-0" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">À PROPOS DE NOUS</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link px-0 py-0" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">NOTRE SOCIÉTÉ</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link px-0 py-0" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">DES SERVICES ADAPTÉS</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+      <h5 class="h">Nous sommes <span>Virgile</span> et <span>Lucas</span>, 30 ans tous les deux et heureux fondateurs de <span>BrownBro Production</span>.</h5>
+      <p>Virgile, journaliste Reporter d’Images et chef opérateur ; et Lucas, journaliste, nous avons collaboré avec de grandes sociétés de production (Première Lignes, Capa presse, Martange, Jara Prod, Carson La nouvelle édition),  chaînes de télévision (France 2, Canal +, TV5 Monde, France 5), personnalités politiques et médiatiques. <br>Nés et formés dans la société de l’image et de l’information, nous créons des contenus dynamiques et grand public sur des formats variés – des plus dynamiques (type Pure Player – Konbini, Brut, Loopsider…) aux plus classiques (reportage, documentaire, clips corporate…) – avec un dénominateur commun : la qualité de l’image et du son.</p>
+    </div>
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+      <h5 class="h">Notre société</h5>
+      <p>L’objectif de BrownBro est simple : traduire en contenu audiovisuel vos objectifs stratégiques et vos idées. Pour cela, nous travaillons en étroite collaboration avec un réseau de professionnels, déployé à géométrie variable en fonction de votre projet : graphistes, monteurs, consultants communication, stratégie digitale, marketing, journalistes,…</p>
+    </div>
+    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+      <h5 class="h">Des services adaptés</h5>
+      <p>BrownBro propose un accompagnement sur mesure afin qu’ensemble, nous réalisions des projets uniques, singuliers et originaux, au plus près de votre identité.</p>
+      <p>BrownBro adapte son offre en fonction :</p>
+      <ul>
+        <li>des supports – télévision, cinéma, réseaux sociaux, captation événementielle.</li>
+        <li>des cibles – communication corporate, interne, événementielle, politique, grand public</li>
       </ul>
     </div>
-    <div class="row">
+  </div>
 
+  <div class="our-team col">
+    <div class="row flex-wrap">
+      <div class="col flex-grow-0">
+        <p class="dots">..............</p>
+      </div>
+      <div class="col titre">
+        <h2><span>NOTRE</span> EQUIPE</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col team-card">
+        <div class="team-photo">
+          <%= image_tag "virgile.jpg" %>
+        </div>
+        <div class="team-member">
+          <h5>Virgile Tron</h5>
+          <p>Réalisateur & Co-Fondateur</p>
+        </div>
+      </div>
+      <div class="col team-card">
+        <div class="team-photo">
+          <%= image_tag "lucas.jpg" %>
+        </div>
+        <div class="team-member">
+          <h5>Lucas Fourquet</h5>
+          <p>Journaliste Reporter & Co-Fondateur</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
