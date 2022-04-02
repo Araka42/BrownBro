@@ -110,8 +110,11 @@
       color: white;
       margin-left: 5vw !important;
       z-index: 2;
-      .play-control{
+      .play-control, .mute-video{
         z-index:3;
+        background-color: transparent;
+        color:white;
+        border:none;
       }
     }
   }

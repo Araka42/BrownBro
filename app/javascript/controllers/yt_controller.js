@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["play", "pause"]
+  static targets = ["play", "pause", "soundOn", "soundOff"]
 
   changeIcon(click) {
     console.log(this.playTarget.classList)
@@ -13,6 +13,19 @@ export default class extends Controller {
     } else {
       this.playTarget.classList.remove('d-none')
       this.pauseTarget.classList.add('d-none')
+    }
+  }
+
+  changeMute(click) {
+    console.log(this.soundOnTarget.classList)
+    console.log(this.soundOffTarget.classList)
+    console.log(this.soundOnTarget.classList.contains('d-none'))
+    if (this.soundOnTarget.classList.contains('d-none') == true) {
+      this.soundOnTarget.classList.remove('d-none')
+      this.soundOffTarget.classList.add('d-none')
+    } else {
+      this.soundOnTarget.classList.add('d-none')
+      this.soundOffTarget.classList.remove('d-none')
     }
   }
 }

@@ -8,9 +8,10 @@
     <div class="col-2 align-items-center">
       <%= image_tag "pictobanner.png", class:"row pictobanner" %>
       <div class="row video-controls" data-controller="yt">
-        <div class="col mute-video">
-          <i class="fa fa-volume-up"></i>
-        </div>
+        <button class="col mute-video" data-action="click->yt#changeMute">
+          <i class="fa fa-volume-up" data-yt-target="soundOn"></i>
+          <i class="fa-solid fa-volume-off d-none" data-yt-target="soundOff"></i>
+        </button>
         <button class="col play-control" data-action="click->yt#changeIcon" >
           <i class="fa fa-play" data-yt-target="play"></i>
           <i class="fa-solid fa-pause d-none" data-yt-target="pause"></i>
