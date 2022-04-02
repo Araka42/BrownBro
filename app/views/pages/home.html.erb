@@ -1,6 +1,26 @@
-<div class="banner">
-</div>
+
 <div class="container">
+  <%= render 'shared/navbar' %>
+</div>
+<div class="banner d-flex align-items-center">
+  <iframe class="video" data-quality="720p" data-muted="true" data-type="youtube" data-id="wBjhMcLNVtU" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="1440" height="462" src="https://www.youtube.com/embed/wBjhMcLNVtU?controls=0&amp;enablejsapi=1&amp;iv_load_policy=3&amp;loop=1&amp;modestbranding=1&amp;origin=https%3A%2F%2Fbrownbroproduction.fr&amp;playlist=wBjhMcLNVtU&amp;playsinline=1&amp;rel=0&amp;widgetid=1" id="widget2" bis_size="{&quot;x&quot;:0,&quot;y&quot;:-462,&quot;w&quot;:1440,&quot;h&quot;:1386,&quot;abs_x&quot;:0,&quot;abs_y&quot;:-462}" data-uniqid="624862cbda303" style="width: 1440px;">
+  </iframe>
+  <div class="row banner-content">
+    <div class="col-2 pictobanner align-items-center">
+      <%= image_tag "pictobanner.png" %>
+    </div>
+    <div class="col-8 banner-text">
+      <div class="row">
+        <span class="p1">BROWNBRO VOUS ACCOMPAGNE</span><br>
+        <span>TOUT AU LONG DE VOTRE PROJET</span>
+      </div>
+    </div>
+    <div class="col-2 mouse-button on-right">
+      <span>Scroll down</span>
+    </div>
+  </div>
+</div>
+<div class="container" style="margin-top:80vh">
     <div class="home-content">
       <h1 class="home-content-title">
         <span class="home-content-title-p1">NOTRE</span>
