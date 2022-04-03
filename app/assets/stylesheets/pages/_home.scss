@@ -74,17 +74,39 @@
 
 }
 
-.customers{
-  margin: 0px -30px;
-  height: 210px;
-  .inner-customers{
-    padding: 0px 30px;
-    .carousel{
-      .carousel-item{
+.slider {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 10px;
+  height: 204px;
+  background-color: white;
+  overflow: hidden;
+  .slider-slides{
+    height: 100%;
+    width: 100%;
+      .slider-slide{
+        width: 204px !important;
+        height: 204px !important;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+        font-weight: bold;
+        width: 100%;
+        height: 100%;
+        background-color: lemonchiffon;
+        transition: 1s;
+        opacity: 0;
         img{
-          width: 204px;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+        .active{
+          opacity: 1;
         }
       }
     }
-  }
 }

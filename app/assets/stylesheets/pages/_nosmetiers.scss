@@ -27,28 +27,45 @@
 
 
 .banner-metier{
-  height: 420px;
+  height: 50vh;
   background-color: white;
+  z-index: -2;
+  position:absolute;
+  top:0;
+  iframe{
+    height: 100%;
+    width: 100vw;
+    z-index: -2;
+    .html5-video-player {
+      width: 100vw;
+      height: 100%;
+    }
+  }
 }
 
-.nav-pills{
-  margin-top: 30px;
-  margin-bottom: 35px;
-  .nav-item{
-    margin-right: 25px;
-    color: #78788F;
-    .nav-link{
-      color:#787878;
-      letter-spacing: .05em;
-      line-height: 1;
-      font-size:14px;
-      background-color: transparent !important;
-      padding: 0.4em 0 !important;
-      cursor: pointer;
-    }
-    .nav-link.active{
-      color:#FF7500;
-      border-bottom: 1px #FF7500 dashed;
+.positions{
+  position: relative;
+  top: 35vh;
+  height: 150vh;
+  .nav-pills{
+    margin-top: 30px;
+    margin-bottom: 35px;
+    .nav-item{
+      margin-right: 25px;
+      color: #78788F;
+      .nav-link{
+        color:#787878;
+        letter-spacing: .05em;
+        line-height: 1;
+        font-size:14px;
+        background-color: transparent !important;
+        padding: 0.4em 0 !important;
+        cursor: pointer;
+      }
+      .nav-link.active{
+        color:#FF7500;
+        border-bottom: 1px #FF7500 dashed;
+      }
     }
   }
 }
