@@ -1,24 +1,31 @@
 .banner-contact{
-  height: 380px;
+  height: 50vh;
+  width: 100vw;
+  position:absolute;
+  top:0;
+
   iframe{
-    z-index: -3;
-    height: auto;
-    min-width: 100%;
-    max-width: none;
+    // height: 100vh;
+    width: 100vw;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    z-index:-1;
+    .html5-video-player {
+      width: 100vw;
+      // height: 100%;
+    }
   }
 }
 
 .contact-infos{
+    position: absolute;
+    top: 60vh;
     padding-left: 15px !important;
     padding-right: 15px !important;
     width: 100%;
     padding-top: 20px !important;
     padding-bottom: 80px !important;
+    height: 100vh;
+    margin-bottom: 80px;
     .contact-title{
       margin-top: 30px;
       margin-bottom: 10px;
