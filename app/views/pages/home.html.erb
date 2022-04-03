@@ -7,14 +7,14 @@
   <div class="row banner-content">
     <div class="col-2 align-items-center">
       <%= image_tag "pictobanner.png", class:"row pictobanner" %>
-      <div class="row video-controls" data-controller="yt">
-        <button class="col mute-video" data-action="click->yt#changeMute">
-          <i class="fa fa-volume-up" data-yt-target="soundOn"></i>
-          <i class="fa-solid fa-volume-off d-none" data-yt-target="soundOff"></i>
+      <div class="row video-controls" data-controller="banner">
+        <button class="col mute-video" data-action="click->banner#changeMute">
+          <i class="fa fa-volume-up" data-banner-target="soundOn"></i>
+          <i class="fa-solid fa-volume-off d-none" data-banner-target="soundOff"></i>
         </button>
-        <a href ="#" class="col play-control" data-action="click->yt#changeIcon" id="video">
-          <i class="fa fa-play" data-yt-target="play" id="play-button"></i>
-          <i class="fa-solid fa-pause d-none" data-yt-target="pause" id="pause-button"></i>
+        <a href ="#" class="col play-control" data-action="click->banner#changeIcon" id="video">
+          <i class="fa fa-play" data-banner-target="play" id="play-button"></i>
+          <i class="fa-solid fa-pause d-none" data-banner-target="pause" id="pause-button"></i>
         </a>
       </div>
     </div>
@@ -72,26 +72,35 @@
         <span class="home-content-title-p1">NOS</span>
         <span class="home-content-title-p2">PROJETS</span>
       </h1>
-    </div>
-    <div class="customers row">
-      <div class="inner-customers">
-        <div id="carouselcustomers" class="carousel slide" data-bs-ride="carousel">
+      <div class="row">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
-            <div class="carousel-item active d-flex justify-content-between">
-              <%= image_tag "customers/01.png", alt:"BrownBroProduction-La-Rosee", class:"d-block"%>
-              <%= image_tag "customers/02.png", alt:"BrownBroProduction-Hermes", class:"d-block"%>
-              <%= image_tag "customers/03.png", alt:"BrownBroProduction", class:"d-block"%>
-            </div>
-            <div class="carousel-item d-flex justify-content-between">
-              <%= image_tag "customers/04.png", alt:"BrownBroProduction", class:"d-block"%>
-              <%= image_tag "customers/05.png", alt:"BrownBroProduction", class:"d-block"%>
-              <%= image_tag "customers/06.png", alt:"BrownBroProduction", class:"d-block"%>
+            <div class="carousel-item active">
+              <%= image_tag "projects/1.jpg", class:"d-block w-50", alt:"First slide"%>
             </div>
             <div class="carousel-item">
+              <%= image_tag "projects/2.png", class:"d-block w-50", alt:"First slide"%>
+            </div>
+            <div class="carousel-item">
+              <%= image_tag "projects/1.jpg", class:"d-block w-50", alt:"First slide"%>
             </div>
           </div>
         </div>
-       <%# carousel des logos des partenaires  %>
+
+
+      </div>
+    </div>
+    <div class="customers slider">
+      <div class="slider-slides row">
+        <div class="slider-slide active">
+          <%= image_tag "customers/1.png" %>
+        </div>
+        <div class="slider-slide">
+          <%= image_tag "customers/2.png" %>
+        </div>
+        <div class="slider-slide">
+          <%= image_tag "customers/3.png" %>
+        </div>
       </div>
     </div>
 </div>
