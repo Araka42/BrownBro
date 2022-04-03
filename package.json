@@ -2,6 +2,8 @@
   "name": "brown-broprod",
   "private": true,
   "dependencies": {
+    "@hotwired/stimulus": "^3.0.1",
+    "@hotwired/stimulus-webpack-helpers": "^1.0.1",
     "@popperjs/core": "^2.11.4",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
@@ -10,6 +12,7 @@
     "bootstrap": "^5.1.3",
     "jquery": "^3.6.0",
     "owl.carousel": "^2.3.4",
+    "sortablejs": "^1.15.0",
     "stimulus": "^3.0.1",
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",

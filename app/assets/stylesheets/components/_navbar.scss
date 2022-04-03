@@ -14,6 +14,11 @@
 }
 #navbarSupportedContent{
   justify-content: flex-end;
+  .nav-item.active{
+    .nav-link{
+      color:#FF7500;
+    }
+  }
   .nav-item {
     .nav-link{
       color:white !important;
@@ -22,6 +27,9 @@
       a:hover{
         color: #FF7500;
       }
+    }
+    .nav-link.active{
+      color:#FF7500;
     }
   }
 }
