@@ -3,7 +3,7 @@
   <%= render 'shared/navbar' %>
 </div>
 <div class="banner d-flex align-items-center">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/wBjhMcLNVtU?controls=0?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="video"></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/wBjhMcLNVtU?controls=1?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="video"></iframe>
   <div class="row banner-content">
     <div class="col-2 align-items-center">
       <%= image_tag "pictobanner.png", class:"row pictobanner" %>
@@ -24,13 +24,13 @@
         <span>TOUT AU LONG DE VOTRE PROJET</span>
       </div>
     </div>
-    <div class="col-2 mouse-button on-right">
+    <a href="#job" class="col-2 mouse-button on-right" data-controller="scroll-to">
       <span>Scroll down</span>
-    </div>
+    </a>
   </div>
 </div>
 <div class="container" style="margin-top:80vh">
-    <div class="home-content">
+    <div class="home-content" id="job">
       <h1 class="home-content-title">
         <span class="home-content-title-p1">NOTRE</span>
         <span class="home-content-title-p2">METIER</span>
@@ -95,40 +95,3 @@
       </div>
     </div>
 </div>
-
-<script>
-  // https://developers.google.com/youtube/iframe_api_reference
-
-  // global variable for the player
-  var player;
-
-  // this function gets called when API is ready to use
-  function onYouTubePlayerAPIReady() {
-    // create the global player from the specific iframe (#video)
-    player = new YT.Player("video", {
-      events: {
-        // call this function when player is ready to use
-        onReady: onPlayerReady
-      }
-    });
-  }
-
-  function onPlayerReady(event) {
-    // bind events
-    var playButton = document.getElementById("play-button");
-    playButton.addEventListener("click", function () {
-      player.playVideo();
-    });
-
-    var pauseButton = document.getElementById("pause-button");
-    pauseButton.addEventListener("click", function () {
-      player.pauseVideo();
-    });
-  }
-
-  // Inject YouTube API script
-  var tag = document.createElement("script");
-  tag.src = "//www.youtube.com/player_api";
-  var firstScriptTag = document.getElementsByTagName("script")[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-</script>
