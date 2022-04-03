@@ -21,7 +21,7 @@ puts "mymy created"
 categories = ["captations évènements", "contenus digitaux", "short media", "films institutionnels", "reportages et publireportages"]
 
 categories.each do |title|
-  category = Category.new(title: title)
+  category = Category.new(title: title, user: mymy)
   category.save!
 end
 
