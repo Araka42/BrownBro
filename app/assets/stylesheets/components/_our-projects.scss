@@ -6,6 +6,10 @@
   font-weight: bold;
   margin-bottom: 50px;
   margin-top: 4rem;
+  span{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px;
+  }
   }
   .nav-link{
     color:#c4e5f6;
