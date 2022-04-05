@@ -1,0 +1,33 @@
+<div class="container">
+  <%= render 'shared/navbar' %>
+</div>
+<div class="container our-projects">
+  <h1><span>NOS</span> PROJETS</h1>
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="pills-all-tab" data-bs-toggle="pill" data-bs-target="#pills-all" type="button" role="tab" aria-controls="pills-all" aria-selected="true">ALL</button>
+    </li>
+    <% Category.all.each do |category|  %>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-<%=category.title.gsub(/\s/, "")%>-tab" data-bs-toggle="pill" data-bs-target="#pills-<%=category.title.gsub(/\s/, "")%>" type="button" role="tab" aria-controls="pills-<%=category.title.gsub(/\s/, "")%>" aria-selected="false"><%=category.title.upcase%></button>
+      </li>
+    <% end %>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
+      <% @projects.each_with_index do |project, index|  %>
+        <%= index + 1 %>
+        <%= project.title %>
+      <% end %>
+    </div>
+    <% Category.all.each do |category|  %>
+      <div class="tab-pane fade" id="pills-<%=category.title.gsub(/\s/, "")%>" role="tabpanel" aria-labelledby="pills-<%=category.title.gsub(/\s/, "")%>-tab">
+        <% category.jointures.each do |j| %>
+          <%= j.project.title %>
+          <%= j.project.description %> <%= "-" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%# <%=  test %>

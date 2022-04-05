@@ -21,7 +21,7 @@ puts "mymy created"
 categories = ["captations évènements", "contenus digitaux", "short media", "films institutionnels", "reportages et publireportages"]
 
 categories.each do |title|
-  category = Category.new(title: title)
+  category = Category.new(title: title, user: mymy)
   category.save!
 end
 
@@ -34,11 +34,18 @@ end
 
 puts "projects created!"
 
-Category.all.each do |category|
-  Project.all.each do |project|
-    jointure = Jointure.new(category: category, project: project)
-    jointure.save!
-  end
+# Category.all.each do |category|
+#   Project.all.each do |project|
+#     jointure = Jointure.new(category: category, project: project)
+#     jointure.save!
+#   end
+# end
+
+Project.all.each do |project|
+  # categories = {first: Category.all.sample, second:Category.all.sample}
+  category = Category.all.sample
+  jointure = Jointure.new(category: category, project: project)
+  jointure.save!
 end
 
 puts "jointures created"
