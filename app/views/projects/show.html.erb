@@ -1,0 +1,12 @@
+<div class="container">
+  <%= render 'shared/navbar' %>
+  <div class="header-show">
+    <div class="post-date">
+      <%= @project.created_at %>
+    </div>
+    <h3><%= @project.title.upcase %></h3>
+  </div>
+  <div>
+    <iframe height="1920" width="1080" src="<%= @project.video_url%>" frameborder="0" allowfullscreen=""></iframe>
+  </div>
+</div>
