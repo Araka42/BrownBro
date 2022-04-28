@@ -1,10 +1,27 @@
 <div class="container">
   <%= render 'shared/navbar' %>
 </div>
+
 <div class="banner-metier">
-  <iframe src="https://www.youtube.com/embed/CvzWVqesoH0?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/CvzWVqesoH0?autoplay=1&mute=1&enablejsapi=" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen autoplay="1" controls="0"></iframe>
+    <div class="banner-text">
+      <div class="">
+        <h1><span>NOTRE METIER</span></h1>
+      </div>
+      <a class="play-button-style2 single-popup-item" data-bs-toggle="modal" data-bs-target="#videoModal">
+        <div class="d-flex flex-row justify-content-start">
+          <div class="p-0">
+            <i class="fa-solid fa-play first-play"></i>
+          </div>
+          <div class="second-play">
+            <span>PLAY</span>
+          </div>
+        </div>
+      </a>
+    </div>
 </div>
-<div class="container py-5">
+
+<div class="container">
   <div class="positions">
     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
@@ -46,8 +63,8 @@
           <h2><span>NOTRE</span> EQUIPE</h2>
         </div>
       </div>
-      <div class="row">
-        <div class="col team-card">
+      <div class="team-cards">
+        <div class="team-card">
           <div class="team-photo">
             <%= image_tag "virgile.jpg" %>
           </div>
@@ -56,7 +73,7 @@
             <p>Réalisateur & Co-Fondateur</p>
           </div>
         </div>
-        <div class="col team-card">
+        <div class="team-card">
           <div class="team-photo">
             <%= image_tag "lucas.jpg" %>
           </div>
@@ -65,6 +82,17 @@
             <p>Journaliste Reporter & Co-Fondateur</p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Video Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog video-pop-up" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <iframe width="1200" height="700" src="https://www.youtube.com/embed/CvzWVqesoH0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>

@@ -64,3 +64,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "faker"
+
+gem 'inline_svg'
+
+gem 'popper_js', '~> 2.9.3'
