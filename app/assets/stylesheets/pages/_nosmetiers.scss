@@ -30,8 +30,9 @@
   height: 50vh;
   background-color: white;
   z-index: -2;
-  position:absolute;
-  top:0;
+  // position:absolute;
+  // top:0;
+
   iframe{
     height: 100%;
     width: 100vw;
@@ -41,11 +42,50 @@
       height: 100%;
     }
   }
-}
+  .banner-text{
+    padding-left: 95px;
+    flex-grow: 1;
+    position: absolute;
+    top: 200px;
+    h1{
+      font-family: Poppins;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 60px;
+      span{
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1px;
+        color: white;
+      }
+    }
+    .first-play{
+      border: 1px white dotted;
+      border-radius: 50%;
+      color: #FF7500;
+      padding: 15px;
+    }
 
+    .second-play{
+      padding:10px;
+      i{
+        color:white;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1px;
+      }
+      span{
+        color:white;
+        font-size:12px;
+        padding-left: 10px;
+        font-weight: 300;
+        letter-spacing: 0.1em;
+      }
+    }
+    a{
+      text-decoration: none;
+    }
+  }
+}
 .positions{
-  position: relative;
-  top: 35vh;
   height: 150vh;
   .nav-pills{
     margin-top: 30px;
@@ -97,7 +137,7 @@
 .our-team{
   color:white;
   padding-top: 40px;
-  padding-bottom: 75px;
+  padding-bottom: 175px;
   .dots{
     position: absolute;
     left: 0;
@@ -117,30 +157,129 @@
       }
     }
   }
-  .team-card{
-    margin-top: -30px;
-    .team-photo{
-      height: 320px;
-      width: 360px;
-      padding-left: 40px;
-    }
-    img{
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-    .team-member{
-      h5{
-        margin-top:-1.5rem;
-        font-size:24px;
-        font-weight: bold;
+  // .team-card{
+  //   margin-top: -30px;
+  //   .team-photo{
+  //     height: 320px;
+  //     width: 360px;
+  //     padding-left: 40px;
+  //   }
+  //   img{
+  //     height: 100%;
+  //     width: 100%;
+  //     object-fit: cover;
+  //   }
+  //   .team-member{
+  //     h5{
+  //       margin-top:-1.5rem;
+  //       font-size:24px;
+  //       font-weight: bold;
+  //     }
+  //     p{
+  //       color:#FF7500;
+  //       font-weight: 500;
+  //       font-size: 14px;
+  //       line-height: 0.5em;
+  //     }
+  //   }
+  // }
+
+  .team-cards{
+    display: grid;
+    // grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+    .team-card{
+      .team-photo{
+        height: 320px;
+        width: 360px;
+        padding-left: 40px;
+        img{
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
       }
-      p{
-        color:#FF7500;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 0.5em;
+      .team-member{
+        h5{
+          margin-top:-1.5rem;
+          font-size:24px;
+          font-weight: bold;
+        }
+        p{
+          color:#FF7500;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 0.5em;
+        }
       }
     }
   }
+}
+.modal{
+  left:5vw;
+  .video-pop-up{
+    max-width: 100vh;
+    margin: 0;
+    .modal-content{
+      background-color: transparent;
+      .modal-body{
+        padding: 0;
+      }
+    }
+  }
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .team-cards {
+    grid-template-columns: 1fr;
+    .team-card{
+      margin-bottom: 50px;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .team-cards {
+    grid-template-columns: 1fr;
+    .team-card{
+      margin-bottom: 50px;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .team-cards {
+    grid-template-columns: 1fr;
+    .team-card{
+      margin-bottom: 50px;
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .team-cards {
+    grid-template-columns: 1fr 1fr;
+    .team-card{
+      margin-bottom: 50px;
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .team-cards {
+    grid-template-columns: 1fr 1fr;
+    .team-card{
+      margin-bottom: 50px;
+    }
+  }
+}
+
+// controls video
+.ytp-chrome-top, .ytp-show-cards-title, .ytp-chrome-controls{
+  display: none;
 }
