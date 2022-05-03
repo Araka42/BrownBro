@@ -68,3 +68,5 @@ gem "faker"
 gem 'inline_svg'
 
 gem 'popper_js', '~> 2.9.3'
+
+gem 'mail_form'
