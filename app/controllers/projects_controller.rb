@@ -8,9 +8,14 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
+  def new
+    @project = Project.new
+  end
+
   def create
     @project = Project.new(project_params)
-    @category = Category.find(params[:category_id])
+    raise
+    @categories = Category.find(params[:category_id])
     @project.user = current_user
     if @project.save!
       Jointure.create(project: @project, category: @category)
