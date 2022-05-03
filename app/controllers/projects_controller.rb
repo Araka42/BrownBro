@@ -12,21 +12,31 @@ class ProjectsController < ApplicationController
     @project = Project.new
   end
 
+  def new
+    @project = Project.new
+  end
+
   def create
     @project = Project.new(project_params)
-    raise
-    @categories = Category.find(params[:category_id])
+    @project.categs.compact_blank!
+    @categories = @project.categs
     @project.user = current_user
     if @project.save!
-      Jointure.create(project: @project, category: @category)
+      @categories.each do |categ|
+        category = Category.find_by(title: categ)
+        Jointure.create(project_id: @project.id, category_id: category.id)
+      end
+      # jointures = Jointure.find_by(project: @project)
+      # @project.jointures = jointures
+      # @project.save
       redirect_to project_path(@project)
     else
       render :new
     end
   end
 
-  def new
-    @project = Project.new
+  def edit
+    @project = Project.find(params[:id])
   end
 
   def update
@@ -35,9 +45,6 @@ class ProjectsController < ApplicationController
     redirect_to projects_path
   end
 
-  def edit
-    @project = Project.find(params[:id])
-  end
 
   def destroy
     @project = Project.find(params[:id])
@@ -48,7 +55,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :user_id, :video_url, :user_id, :created_at, :updated_at)
+    params.require(:project).permit(:title, :description, :user_id, :video_url, :user_id, :created_at, :updated_at, categs: [])
   end
 end
 

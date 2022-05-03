@@ -9,6 +9,7 @@
       <%= f.input :title %>
       <%= f.input :video_url %>
       <%= f.input :description, as: :text %>
+      <%= f.input :categs, as: :check_boxes, collection: Category::CATEGORIES %>
       <%= f.submit "Ajouter", class: "button-form-new" %>
     <% end %>
   </div>
