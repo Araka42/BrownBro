@@ -3,10 +3,15 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
+  def new
+    @category = Category.new
+  end
+
   def create
-    @category = category.new(category_params)
+    @category = Category.new(category_params)
+    @category.user = current_user
     if @category.save!
-      redirect to projects_path
+      redirect_to projects_path
     else
       render :new
     end
