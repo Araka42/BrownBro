@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     resources :jointures, only: [:create, :update, :destroy]
   end
   resources :categories, only: [:index, :create, :destroy, :new]
+  resources :contacts, only: [:new, :create]
 end
