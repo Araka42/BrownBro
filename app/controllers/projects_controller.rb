@@ -46,3 +46,5 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:title, :description, :user_id, :video_url, :user_id, :created_at, :updated_at)
   end
 end
+
+#test
