@@ -9,8 +9,9 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
+    @category.user = current_user
     if @category.save!
-      redirect to projects_path
+      redirect_to projects_path
     else
       render :new
     end
