@@ -1,0 +1,14 @@
+<div class="container">
+  <%= render 'shared/navbar' %>
+</div>
+
+<div class="container form-new-project">
+  <%= simple_form_for [ @project ] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :video_url %>
+    <%= f.input :description, as: :text %>
+    <%= f.input :category, as: :check_boxes, collection: Category::CATEGORIES %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Ajouter un projet", class: "btn btn-primary" %>
+  <% end %>
+</div>

@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
+
+
   def index
     @projects = Project.all
     @categories = Category.all
@@ -8,30 +11,43 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
+  def new
+    @project = Project.new
+  end
+
   def create
     @project = Project.new(project_params)
-    @category = Category.find(params[:category_id])
     @project.user = current_user
-    if @project.save!
-      Jointure.create(project: @project, category: @category)
-      redirect_to project_path(@project)
-    else
-      render :new
+    @project.category.compact_blank!
+    if @project.category.count == 1
+      @category = Category.find_by(title: @project.category)
+      if @project.save!
+        Jointure.create(project_id: @project.id, category_id: @category.id)
+        redirect_to project_path(@project)
+      else
+        render :new
+      end
+    elsif @project.categories.count > 1
+      @project.categories.each do |category|
+        category = Category.find_by(title: category)
+        if @project.save!
+          Jointure.create(project_id: @project.id, category_id: category.id)
+          redirect_to project_path(@project)
+        else
+          render :new
+        end
+      end
     end
   end
 
-  def new
-    @project = Project.new
+  def edit
+    @project = Project.find(params[:id])
   end
 
   def update
     @project = Project.find(params[:id])
     @project.update(project_params)
     redirect_to projects_path
-  end
-
-  def edit
-    @project = Project.find(params[:id])
   end
 
   def destroy
@@ -43,8 +59,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :user_id, :video_url, :user_id, :created_at, :updated_at)
+    params.require(:project).permit(:title, :description, :user_id, :video_url, :user_id, :created_at, :updated_at, :category)
   end
 end
-
-#test
