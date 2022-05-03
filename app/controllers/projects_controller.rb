@@ -23,7 +23,7 @@ class ProjectsController < ApplicationController
     @project.user = current_user
     if @project.save!
       @categories.each do |categ|
-        category = Category.find_by(title: categ)
+        category = Category.find_by(id: categ)
         Jointure.create(project_id: @project.id, category_id: category.id)
       end
       # jointures = Jointure.find_by(project: @project)

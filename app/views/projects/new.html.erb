@@ -3,13 +3,13 @@
 </div>
 
 <div class="container">
-  <h1>Ajouter une catégorie</h1>
+  <h1>Ajouter un projet</h1>
   <div class="mt-5">
     <%= simple_form_for [@project] do |f| %>
-      <%= f.input :title %>
-      <%= f.input :video_url %>
+      <%= f.input :title, label: "Nom du projet" %>
+      <%= f.input :video_url, label: "URL de la vidéo" %>
       <%= f.input :description, as: :text %>
-      <%= f.input :categs, as: :check_boxes, collection: Category::CATEGORIES %>
+      <%= f.input :categs, as: :check_boxes, collection: Category.all.each {|category| category.title}, label: "Catégories" %>
       <%= f.submit "Ajouter", class: "button-form-new" %>
     <% end %>
   </div>
