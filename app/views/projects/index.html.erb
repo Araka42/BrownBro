@@ -14,12 +14,19 @@
     <% end %>
   </ul>
   <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
-      <% @projects.each_with_index do |project, index|  %>
-        <%= index + 1 %>
-        <%= project.title %>
-      <% end %>
+    <div class="tab-pane fade show active d-flex align-items-center" id="pills-all"  role="tabpanel" aria-labelledby="pills-all-tab">
+      <div class="cards ">
+        <% @projects.each_with_index do |project, index|  %>
+          <div class="card-category">
+            <%= image_tag "tabledehaut.png", class:"img-index w-100 h-100" %>
+            <div class="num"> <%= index + 1 %></div>
+            <div class="title-index"><%= project.title %></div>
+          </div>
+        <% end %>
+      </div>
     </div>
+  </div>
+
     <% Category.all.each do |category|  %>
       <div class="tab-pane fade" id="pills-<%=category.title.gsub(/\s/, "")%>" role="tabpanel" aria-labelledby="pills-<%=category.title.gsub(/\s/, "")%>-tab">
         <% category.jointures.each do |j| %>
