@@ -1,16 +1,5 @@
-class Contact < MailForm::Base
-  attribute :name,      validate: true
-  attribute :email,     validate: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
-  attribute :message
-  attribute :nickname,  captcha: true
-
-  # Declare the e-mail headers. It accepts anything the mail method
-  # in ActionMailer accepts.
-  def headers
-    {
-      :subject => "Contact Form",
-      :to => "myriam.delbreil@gmail.com",
-      :from => %("#{name}" <#{email}>)
-    }
-  end
+class Contact < ApplicationRecord
+  validates :name, presence: true
+  validates :email, presence: true, format: { with: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i }
+  validates :content, presence: true
 end
