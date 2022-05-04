@@ -32,16 +32,16 @@
     </div>
     <div class="col flex-column contact-form container">
       <%= simple_form_for @contact do |f| %>
-        <div>
-          <%= f.label :name, "Votre nom" %><br>
+        <div class="name-email-contact">
+          <%= f.label :name, "Votre nom" %>
           <%= f.text_field :name %>
         </div>
-        <div>
-          <%= f.label :email, "Votre email" %><br>
+        <div class="name-email-contact">
+          <%= f.label :email, "Votre email" %>
           <%= f.email_field :email, autocomplete: "email" %>
         </div>
-        <div>
-          <%= f.label :content, "Votre message" %><br>
+        <div class="content-mail">
+          <%= f.label :content, "Votre message" %>
           <%= f.text_field :content %>
         </div>
         <%= f.submit "ENVOYER", class:"send-email" %>

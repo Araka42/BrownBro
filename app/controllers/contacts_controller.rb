@@ -7,15 +7,14 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.save
       ContactMailer.contact_mail(@contact).deliver
+      redirect_to root_path, notice: "Mail envoyé, nous revenons vers vous vite!"
     else
-      render :new
+      render :new, alert: "Votre mail n'a pas été envoyé, merci de réessayer."
     end
   end
 
-  def thanks
-  end
-
   private
+
   def contact_params
     params.require(:contact).permit(:name, :email, :content)
   end
