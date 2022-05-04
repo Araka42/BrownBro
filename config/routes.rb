@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   end
   resources :categories, only: [:index, :create, :destroy, :new]
   resources :contacts, only: [:new, :create]
+  resources :messages, only: [:new, :create]
 end
