@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @projects = Project.all
     @categories = Category.all
@@ -6,10 +7,6 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-  end
-
-  def new
-    @project = Project.new
   end
 
   def new
@@ -26,9 +23,6 @@ class ProjectsController < ApplicationController
         category = Category.find_by(id: categ)
         Jointure.create(project_id: @project.id, category_id: category.id)
       end
-      # jointures = Jointure.find_by(project: @project)
-      # @project.jointures = jointures
-      # @project.save
       redirect_to project_path(@project)
     else
       render :new
@@ -58,5 +52,3 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:title, :description, :user_id, :video_url, :user_id, :created_at, :updated_at, categs: [])
   end
 end
-
-#test
