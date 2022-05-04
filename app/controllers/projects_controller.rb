@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def index
     @projects = Project.all
     @categories = Category.all
@@ -26,9 +28,6 @@ class ProjectsController < ApplicationController
         category = Category.find_by(id: categ)
         Jointure.create(project_id: @project.id, category_id: category.id)
       end
-      # jointures = Jointure.find_by(project: @project)
-      # @project.jointures = jointures
-      # @project.save
       redirect_to project_path(@project)
     else
       render :new
