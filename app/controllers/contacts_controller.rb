@@ -4,13 +4,18 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(params[:contact])
-    @contact.request = request
-    if @contact.deliver
-      flash.now[:success] = 'Message sent!'
+    @contact = Contact.new(contact_params)
+    if @contact.save
+      ContactMailer.contact_mail(@contact).deliver
+      redirect_to root_path, notice: "Mail envoyé, nous revenons vers vous vite!"
     else
-      flash.now[:error] = 'Could not send message'
-      render :new
+      render :new, alert: "Votre mail n'a pas été envoyé, merci de réessayer."
     end
+  end
+
+  private
+
+  def contact_params
+    params.require(:contact).permit(:name, :email, :content)
   end
 end

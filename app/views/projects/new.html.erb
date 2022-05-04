@@ -10,6 +10,7 @@
       <%= f.input :video_url, label: "URL de la vidéo" %>
       <%= f.input :description, as: :text %>
       <%= f.input :categs, as: :check_boxes, collection: Category.all.each {|category| category.title}, label: "Catégories" %>
+      <%= f.input :photo, as: :file %>
       <%= f.submit "Ajouter", class: "button-form-new" %>
     <% end %>
   </div>

@@ -1,23 +1,52 @@
 <div class="container">
-  <h1>Contact Form</h1>
-  <%= form_for @contact do |f| %>
-    <div class="col-md-6">
-      <%= f.label :name %></br>
-      <%= f.text_field  :name, required: true, class: "contact-form-text-area" %></br>
+  <%= render 'shared/navbar' %>
+</div>
 
-      <%= f.label :email %></br>
-      <%= f.text_field :email, required: true, class: "contact-form-text-area" %></br>
-
-      <%= f.label :message %></br>
-      <%= f.text_area :message, rows: 8, cols: 40, required: true, class: "contact-form-text-area",
-            placeholder: "Send me a message"%></br>
-
-      <div class= "d-none">
-        <%= f.label :nickname %>
-        <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
+<div class="banner-contact">
+  <iframe class="video" data-quality="720p" data-muted="true" data-type="youtube" data-id="CvzWVqesoH0" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="1440" height="380" src="https://www.youtube.com/embed/CvzWVqesoH0?controls=0&amp;enablejsapi=1&amp;iv_load_policy=3&amp;loop=1&amp;modestbranding=1&amp;origin=https%3A%2F%2Fbrownbroproduction.fr&amp;playlist=CvzWVqesoH0&amp;playsinline=1&amp;rel=0&amp;widgetid=1" id="widget2" bis_size="{&quot;x&quot;:0,&quot;y&quot;:-379,&quot;w&quot;:1440,&quot;h&quot;:1140,&quot;abs_x&quot;:0,&quot;abs_y&quot;:-379}" data-uniqid="6247016a4de46" style="width: 1440px;"></iframe>
+</div>
+<div class="container">
+  <div class="row contact-infos container">
+    <div class="col">
+      <div class="row contact-title">
+        <div class="contact-subtitle">UN PROJET ?</div>
+        <h2 class="contact-text">Contactez-nous</h2>
       </div>
-
-      <%= f.submit 'Send Message', class: 'btn btn-primary' %>
+      <div class="row">
+        <div class="contact-subtitle-1">TÉLÉPHONE</div>
+        <h3 class="contact-data">Virgile TRON +33 (0) 6 64 30 49 08</h3>
+        <h3 class="contact-data">Lucas FOURQUET +33 (0) 6 42 04 16 45</h3>
+      </div>
+      <div class="row">
+        <div class="contact-subtitle-1">E-MAIL</div>
+        <h3 class="contact-data">contact@brownbroproduction.com</h3>
+      </div>
+      <div class="nav-menu" id="menu_2">
+        <div class="social">
+          <a href="https://www.youtube.com/channel/UCcOXM_pcslWkH8lROJ3XPNg"><i class="fab fa-youtube"></i></a>
+          <a href=""><i class="fab fa-facebook-f"></i></a>
+          <a href=""><i class="fab fa-instagram"></i></a>
+          <a href=""><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
     </div>
-  <% end %>
+    <div class="col flex-column contact-form container">
+      <%= simple_form_for @contact do |f| %>
+        <div class="name-email-contact">
+          <%= f.label :name, "Votre nom" %>
+          <%= f.text_field :name %>
+        </div>
+        <div class="name-email-contact">
+          <%= f.label :email, "Votre email" %>
+          <%= f.email_field :email, autocomplete: "email" %>
+        </div>
+        <div class="content-mail">
+          <%= f.label :content, "Votre message" %>
+          <%= f.text_field :content %>
+        </div>
+        <%= f.submit "ENVOYER", class:"send-email" %>
+      <% end %>
+    </div>
+  </div>
+
 </div>
